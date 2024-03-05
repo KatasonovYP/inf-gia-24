@@ -9,3 +9,6 @@ for i in range(0, len(p) - 101):
     mx = max(mx, p[i + 101] - p[i])
 
 print(mx)
+
+#     1     2     3  ...  100    101
+# ----WW----WW---WW--...---WW----WW
