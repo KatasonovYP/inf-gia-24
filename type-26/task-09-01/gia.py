@@ -1,6 +1,5 @@
 f = list(map(lambda x: x.split(), open("data.txt").readlines()[1:]))
 
-
 notes = dict(sorted({int(i[0]): [int(i[1]), i[2]] for i in f}.items()))
 parking = [[], []]
 count, leave = 0, 0
@@ -12,7 +11,8 @@ for arrive in notes:
         count += 1
     elif len(parking[1]) != 20:
         parking[1].append(arrive + notes[arrive][0])
-        count += 1 if notes[arrive][1] == "A" else 0
+        if notes[arrive][1] == "A":
+            count += 1
     else:
         leave += 1
 
