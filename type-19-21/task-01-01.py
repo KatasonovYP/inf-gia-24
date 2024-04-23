@@ -6,8 +6,7 @@ def moves(a):
 
 @lru_cache(None)
 def game(a):
-    if a >= 68:
-        return 'W'
+    if a >= 68: return 'W'
     if any(game(x) == 'W' for x in moves(a)): return 'P1'
     if all(game(x) == 'P1' for x in moves(a)): return 'V1'
     if any(game(x) == 'V1' for x in moves(a)): return 'P2'
